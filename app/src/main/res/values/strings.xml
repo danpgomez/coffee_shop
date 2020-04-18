@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CoffeeShop</string>
+    <string name="menu_item">Menu item</string>
+    <string name="beverages_sold">Beverages Sold</string>
+    <string name="share">Share</string>
+    <string name="share_message">"I just sold %1$d beverages for a total of $%2$d 😋"</string>
+    <string name="sharing_not_available">"No application found for sharing</string>
+</resources>

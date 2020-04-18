@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="itemsSold"
+            type="Integer" />
+        <variable
+            name="totalSold"
+            type="Integer" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#2B1E17"
+        tools:context=".MainActivity">
+
+        <ImageButton
+            android:id="@+id/product_button"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="@string/menu_item"
+            android:scaleType="centerInside"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_cardBackground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/cappuccino" />
+
+        <View
+            android:id="@+id/bottom_cardBackground"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="#FFEAD4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/beverages_soldText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/coustard"
+            android:text="@string/beverages_sold"
+            android:textSize="24sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/num_BevsText"
+            app:layout_constraintEnd_toEndOf="@+id/bottom_cardBackground"
+            app:layout_constraintHorizontal_bias="0.07"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/num_BevsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/coustard"
+            android:textSize="18sp"
+            android:text="@{itemsSold.toString()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.96"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/bottom_cardBackground"
+            app:layout_constraintVertical_bias="0.32"
+            tools:text="20" />
+
+        <TextView
+            android:id="@+id/total_costText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/coustard"
+            android:textSize="30sp"
+            android:text="@{'$' + totalSold.toString()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="$30"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
